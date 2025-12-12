@@ -33,33 +33,34 @@ print("************* Affichage de la colonne Longueur *************\n")
 col_longueur = df["Longueur"]
 print(col_longueur)
 
-#3) filtrer les séquences avec la Longueur est supérieur à 10
+#3) Filtrer les séquences avec la Longueur est supérieur à 10
 print("*********** Filtrage: Longueur supérieur à 10 ***********") 
 #Filtrer les séquences avec la Longueur est supérieur à 10
 filtered_df=df[df["Longueur"]>10]
 print(filtered_df)
 
-#4) calculer la moyenne du pourcentage de GC après la virgule 
+#4) Calculer la moyenne du pourcentage de GC après la virgule 
 print("*********** Calcul de la moyenne ***********")
 #Calculer la moyenne du pourcentage de GC Avec 3 chiffres après la virgule
 average_gc = df["Pourcentage GC"].mean()
 print(f"Pourcentage moyen de GC:{average_gc:.3f}%")
 
 #5) Ajouter une nouvelle colonne "Catégorie GC"
-print("************* Ajouter une nouvelle colonne 'catégorie GC' *************")
-#Ajouter une nouvelle colonne "catégorie GC"
+print("************* Ajouter une nouvelle colonne 'Catégorie GC' *************")
+#Ajouter une nouvelle colonne "Catégorie GC"
 df["Catégorie GC"] = df["Pourcentage GC"].apply(lambda x: "Riche" if x > 55 else ("Moyen" if 45 <= x <= 55 else "Faible"))
 print(df)
 #6) Ajouter colonne du nombre de 'G'
 df["Nb_G"] = df["Séquence"].apply(lambda seq:seq.count("G"))
 print(df)
 
-#7calculer l`écart-type du %GC de la longeur
-ecart_gc= df["pourcantage GC"].std()
-ecart_longeur=df["longeur"].std()
+#7 Calculer l'écart-type du %GC de la Longeur
+ecart_gc= df["Pourcantage GC"].std()
+ecart_Longeur=df["Longeur"].std()
 print("\nécart-type%GC:",ecart_gc)
-print("écart-type longeur:",ecart_longeur)
-#sauvgarder le tableau final dans un fichieur csv 
-#sauvgarder le tableau final dans un fichier csv 
-df.to_csv("tableau-sequenses.csv",index=false)
-printe("fichier CSV sauvgardé avec succés")
+print("écart-type Longeur:",ecart_longeur)
+
+#8) Sauvgarder le tableau final dans un fichieur CSV 
+#sauvgarder le tableau final dans un fichier CSV 
+df.to_csv("tableau_sequenses.csv",index=false)
+print("Fichier CSV sauvgardé avec succés")
