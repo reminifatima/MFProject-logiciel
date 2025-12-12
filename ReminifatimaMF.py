@@ -57,8 +57,8 @@ print(df)
 #7 Calculer l'écart-type du %GC de la Longeur
 ecart_gc= df["Pourcantage GC"].std()
 ecart_Longeur=df["Longeur"].std()
-print("\nécart-type%GC:",ecart_gc)
-print("écart-type Longeur:",ecart_longeur)
+print("\nÉcart-type%GC:",ecart_gc)
+print("Écart-type Longeur:",ecart_longeur)
 
 #8) Sauvgarder le tableau final dans un fichieur CSV 
 #sauvgarder le tableau final dans un fichier CSV 
