@@ -62,5 +62,5 @@ print("Écart-type Longueur:",ecart_longueur)
 
 #8) Sauvegarder le tableau final dans un fichier CSV 
 #sauvegarder le tableau final dans un fichier CSV 
-df.to_csv("tableau_sequenses.csv",index=false)
+df.to_csv("tableau_sequenses.csv",index=False)
 print("Fichier CSV sauvgardé avec succés")
