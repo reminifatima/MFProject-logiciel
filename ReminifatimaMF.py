@@ -7,11 +7,11 @@ import pandas as pd
 
 #Données: Séquences ADN, Longueur, Pourcentage de GC
 data={
-  "Séquence": ["ATGCGTACGTA","GCTAGCTAGGCC","GCTAGCTAGGCC","TACGATCGTA","ATGAAAGGCTT","CGTACGTAGC","TTAACCGGAT"],
+  "Séquence": ["ATGCGTACGTA","GCTAGCTAGGCC","ATGCGCGTAAGT","TACGATCGTA","ATGAAAGGCTT","CGTACGTAGC","TTAACCGGAT"],
   "Longueur": [12,12,12,10,11,10,10],
   "Pourcentage GC": [50,66.67,58.33,40,45.45,60,50]
   }
-#Création du DataFrame (tableau pandas)
+#1) Création du DataFrame (tableau pandas)
 df = pd.DataFrame(data)
 
 # *** Première partie: Création et affichage ***
@@ -22,7 +22,7 @@ print("\n")
 # *** Deuxième partie: Opérations ***
 print("******* Opérations *******")
 
-# 1) Sélectionner la colonne "Séquence"
+# Sélectionner la colonne "Séquence"
 sequences = df["Séquence"]
 print(sequences)
 print("\n")
@@ -50,6 +50,7 @@ print("************* Ajouter une nouvelle colonne 'Catégorie GC' *************"
 #Ajouter une nouvelle colonne "Catégorie GC"
 df["Catégorie GC"] = df["Pourcentage GC"].apply(lambda x: "Riche" if x > 55 else ("Moyen" if 45 <= x <= 55 else "Faible"))
 print(df)
+
 #6) Ajouter colonne du nombre de 'G'
 df["Nb_G"] = df["Séquence"].apply(lambda seq:seq.count("G"))
 print(df)
@@ -62,5 +63,5 @@ print("Écart-type Longueur:",ecart_longueur)
 
 #8) Sauvegarder le tableau final dans un fichier CSV 
 #sauvegarder le tableau final dans un fichier CSV 
-df.to_csv("tableau_sequenses.csv",index=False)
+df.to_csv("tableau_sequences.csv",index=False)
 print("Fichier CSV sauvgardé avec succés")
