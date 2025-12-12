@@ -53,3 +53,13 @@ print(df)
 #6) Ajouter colonne du nombre de 'G'
 df["Nb_G"] = df["Séquence"].apply(lambda seq:seq.count("G"))
 print(df)
+
+#7calculer l`écart-type du %GC de la longeur
+ecart_gc= df["pourcantage GC"].std()
+ecart_longeur=df["longeur"].std()
+print("\nécart-type%GC:",ecart_gc)
+print("écart-type longeur:",ecart_longeur)
+#sauvgarder le tableau final dans un fichieur csv 
+#sauvgarder le tableau final dans un fichier csv 
+df.to_csv("tableau-sequenses.csv",index=false)
+printe("fichier CSV sauvgardé avec succés")
